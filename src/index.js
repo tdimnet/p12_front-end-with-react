@@ -1,14 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import TextInput from './lib/TextInput'
+import './index.css'
 
-const App = () => (
-  <div style={{ width: 640, margin: "15px auto" }}>
-    <h1>Hello world</h1>
-    <TextInput label="Email Address" placeholder="name@example.com" />
-  </div>
-)
+import Modal from './Modal'
+
+class App extends React.PureComponent {
+
+  state = {
+    isModalOpen: false
+  }
+  
+  toggleModal = () => {
+    this.setState({ isModalOpen: !this.state.isModalOpen })
+  }
+  
+  render() {
+    return (
+      <div>
+        <button onClick={this.toggleModal} >Open modal</button>
+        <Modal isOpen={this.state.isModalOpen} toggleModal={this.toggleModal} />
+      </div>
+    )
+  }
+}
 
 ReactDOM.render(
   <App />,
