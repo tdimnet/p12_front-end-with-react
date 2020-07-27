@@ -1,5 +1,4 @@
 {
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "name": "p12_front-end-with-react",
   "version": "0.1.0",
   "private": false,
