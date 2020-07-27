@@ -1,4 +1,5 @@
 {
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "name": "p12_front-end-with-react",
   "version": "0.1.0",
   "private": false,
@@ -22,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
