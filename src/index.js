@@ -1,17 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+
+import './index.css'
+import './main.css'
+
+import Modal from './lib/Modal'
+
+class App extends React.PureComponent {
+  state = {
+    isModalOpen: false
+  }
+  
+  toggleModal = () => {
+    this.setState({ isModalOpen: !this.state.isModalOpen })
+  }
+  
+  render() {
+    return (
+      <div>
+        <button onClick={this.toggleModal}>Open modal</button>
+        <Modal isOpen={this.state.isModalOpen} toggleModal={this.toggleModal} content='Employee created' />
+      </div>
+    )
+  }
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
